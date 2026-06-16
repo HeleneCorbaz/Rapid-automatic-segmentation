@@ -5,14 +5,6 @@ Automatically extract colored segmentations from RAPID perfusion maps as NIfTI m
 H. Corbaz et al., "A comparative study of CT perfusion postprocessing tools in medium/distal vessel occlusion stroke," *American Journal of Neuroradiology*, vol. 46, pp. 900–907, 2025.
 
 A. Anastasiou et al., "Mechanical thrombectomy and final infarct volume in medium or distal vessel occlusion stroke: A post hoc analysis of a randomized clinical trial," *JAMA Neurology*, vol. 83, pp. 537–543, 2026.
-```
-
-
-### Available map types
-- `Tmax4s`, `Tmax6s`, `Tmax8s`, `Tmax10s`
-- `CBV`, `CBF`
-- `ADC`
-- `mismatch_tmax6s`
 
 ### Example
 
