@@ -15,13 +15,13 @@ uv pip install -r requirements.txt
 ## Usage
 
 ```bash
-python3 main.py -i <input_file> -o <output_directory> -p <map_type>
+python3 segmentation.py -i <input_file> -o <output_directory> -p <map_type>
 ```
 
 ## Example
 
 ```bash
-python3 main.py -i to_process/image_rapid.nii.gz -o images_segmented -p Tmax4s
+python3 segmentation.py -i to_process/image_rapid.nii.gz -o images_segmented -p Tmax4s
 ```
 
 
