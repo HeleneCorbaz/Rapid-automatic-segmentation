@@ -12,16 +12,34 @@ A. Anastasiou et al., "Mechanical thrombectomy and final infarct volume in mediu
 uv pip install -r requirements.txt
 ```
 
-## Usage
+## Segmentation
+
+Extract a segmentation mask from a RAPID perfusion map:
 
 ```bash
 python3 segmentation.py -i <input_file> -o <output_directory> -p <map_type>
 ```
 
-## Example
+Available map types: `Tmax4s`, `Tmax6s`, `Tmax8s`, `Tmax10s`, `CBV`, `CBF`, `ADC`, `mismatch_tmax6s`
+
+### Example
 
 ```bash
 python3 segmentation.py -i to_process/image_rapid.nii.gz -o images_segmented -p Tmax4s
+```
+
+## Volume Measurement
+
+Measure the volume of a segmentation mask in mL:
+
+```bash
+python3 measure_volume.py -i <mask_file>
+```
+
+### Example
+
+```bash
+python3 measure_volume.py -i images_segmented/image_rapid.nii.gz_mask_Tmax4s.nii.gz
 ```
 
 
