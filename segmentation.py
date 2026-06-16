@@ -10,6 +10,10 @@ class Rapid:
     def __init__(self, path):
         self.path = path
 
+    def get_orientation(self):
+        img = nib.load(self.path)
+        return nib.aff2axcodes(img.affine)
+
     def img_readerRGB(self):
         Dimension = 3
         ComponentType = itk.UC
@@ -69,9 +73,15 @@ class Rapid:
             mask = mask_green
 
         # remove the side barre and the annotations
-        mask[:15, :, :] = 0
-        mask[:, :215, :] = 0
-        self.mask = mask
+       orientation = self.get_orientation()
+
+        if orientation == ('L', 'P', 'S'):
+            mask[:15, :, :] = 0
+            mask[:, 500:, :] = 0
+        elif orientation == ('L', 'A', 'S'):
+            mask[:15, :, :] = 0
+            mask[:, :215, :] = 0
+            
         return self.mask
 
 
